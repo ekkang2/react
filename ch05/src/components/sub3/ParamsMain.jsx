@@ -22,8 +22,13 @@ const ParamsMain = () => {
   const submit2Handler = () => {
     const params = `${formData.name}/${formData.email}/${formData.age}`;
 
-    // result1 라우팅 요청
+    // result2 라우팅 요청
     navigate(`/result2/${params}`);
+  };
+
+  const submit3Handler = () => {
+    // result3 라우팅 요청
+    navigate(`/result3`, { state: { formData } });
   };
 
   //prettier-ignore
@@ -42,7 +47,7 @@ const ParamsMain = () => {
         <br />
         <input type="button" value="주소 파라미터 전송" onClick={submit2Handler} />
         <br />
-        <input type="button" value="state 전송" onClick={null} />
+        <input type="button" value="state 전송" onClick={submit3Handler} />
         <br />
       </form>
 
