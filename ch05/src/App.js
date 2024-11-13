@@ -3,6 +3,7 @@ import "./App.css";
 import Main from "./components/sub1/Main";
 import { BrowserRouter } from "react-router-dom";
 import OutletMain from "./components/sub2/OutletMain";
+import ParamsMain from "./components/sub3/ParamsMain";
 /*
   날짜 : 2024/11/13
   이름 : 김철학
@@ -26,7 +27,11 @@ function App() {
       <hr />
 
       <h4>Router 데이터 전송</h4>
+      <BrowserRouter>
+        <ParamsMain />
+      </BrowserRouter>
       <hr />
+
       <h4>사용자 정의 Router</h4>
     </div>
   );
