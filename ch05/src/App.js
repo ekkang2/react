@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Main from "./components/sub1/Main";
 import { BrowserRouter } from "react-router-dom";
+import OutletMain from "./components/sub2/OutletMain";
 /*
   날짜 : 2024/11/13
   이름 : 김철학
@@ -16,9 +17,16 @@ function App() {
       <BrowserRouter>
         <Main />
       </BrowserRouter>
+      <hr />
 
       <h4>Router Outlet</h4>
+      <BrowserRouter>
+        <OutletMain />
+      </BrowserRouter>
+      <hr />
+
       <h4>Router 데이터 전송</h4>
+      <hr />
       <h4>사용자 정의 Router</h4>
     </div>
   );
