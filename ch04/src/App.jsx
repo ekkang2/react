@@ -1,5 +1,6 @@
 import "./App.css";
 import UseCallbackComponent from "./components/UseCallbackComponent";
+import UseCounterComponent from "./components/UseCounterComponent";
 import UseEffectComponent from "./components/UseEffectComponent";
 import UseMemoComponent from "./components/UseMemoCoponent";
 import UseReducerComponent from "./components/UseReducerComponent";
@@ -37,6 +38,7 @@ function App() {
       <UseCallbackComponent />
 
       <h4>Custom Hook</h4>
+      <UseCounterComponent />
     </>
   );
 }

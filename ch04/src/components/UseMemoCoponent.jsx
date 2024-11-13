@@ -9,6 +9,7 @@ export default function UseMemoComponent() {
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(0);
 
+  // 함수의 결과를 메모이제이션(캐싱)
   const heavyProcess = useMemo(() => {
     sleep(2000);
     return count1 + 100;
