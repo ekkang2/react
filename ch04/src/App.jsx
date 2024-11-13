@@ -1,4 +1,7 @@
 import "./App.css";
+import UseCallbackComponent from "./components/UseCallbackComponent";
+import UseEffectComponent from "./components/UseEffectComponent";
+import UseMemoComponent from "./components/UseMemoCoponent";
 import UseReducerComponent from "./components/UseReducerComponent";
 import UseRefComponent from "./components/UseRefComponent";
 import UseStateComponent from "./components/UseStateComponent";
@@ -25,8 +28,14 @@ function App() {
       <UseReducerComponent />
 
       <h4>useEffect()</h4>
+      <UseEffectComponent />
+
       <h4>useMemo()</h4>
+      <UseMemoComponent />
+
       <h4>useCallback()</h4>
+      <UseCallbackComponent />
+
       <h4>Custom Hook</h4>
     </>
   );
