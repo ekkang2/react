@@ -2,6 +2,7 @@ import "./App.css";
 import ContextParent from "./components/ContextParent";
 import ContextUserList from "./components/ContextUserList";
 import ContextUserRegister from "./components/ContextUserRegister";
+import ReduxParent from "./components/ReduxParent";
 /*
   날짜 : 2024/11/14
   이름 : 김철학
@@ -17,6 +18,7 @@ function App() {
       <ContextUserList />
 
       <h4>Redux 실습</h4>
+      <ReduxParent />
     </div>
   );
 }
