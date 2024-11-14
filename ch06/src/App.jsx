@@ -3,6 +3,8 @@ import ContextParent from "./components/ContextParent";
 import ContextUserList from "./components/ContextUserList";
 import ContextUserRegister from "./components/ContextUserRegister";
 import ReduxParent from "./components/ReduxParent";
+import ReduxUserList from "./components/ReduxUserList";
+import ReduxUserRegister from "./components/ReduxUserRegister";
 /*
   날짜 : 2024/11/14
   이름 : 김철학
@@ -19,6 +21,8 @@ function App() {
 
       <h4>Redux 실습</h4>
       <ReduxParent />
+      <ReduxUserRegister />
+      <ReduxUserList />
     </div>
   );
 }
