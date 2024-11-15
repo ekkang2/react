@@ -1,4 +1,8 @@
 import "./App.css";
+import UseCallbackComponent from "./components/UseCallbackComponent.jsx";
+import UseCounterComponent from "./components/UseCounterComponent.jsx";
+import UseEffectComponent from "./components/UseEffectComponent.jsx";
+import UseMemoComponent from "./components/UseMemoComponent.jsx";
 import UseReducerComponent from "./components/UseReducerComponent.jsx";
 import UseRefComponent from "./components/UseRefComponent.jsx";
 import UseStateComponent from "./components/UseStateComponent.jsx";
@@ -17,15 +21,19 @@ function App() {
       <h4>useRef()</h4>
       <UseRefComponent />
 
-      <h4>userState()</h4>
+      <h4>useState()</h4>
       <UseStateComponent />
 
-      <h4>userReducer()</h4>
+      <h4>useReducer()</h4>
       <UseReducerComponent />
-      <h4>userEffect()</h4>
-      <h4>userMemo()</h4>
-      <h4>userCallback()</h4>
+      <h4>useEffect()</h4>
+      <UseEffectComponent />
+      <h4>useMemo()</h4>
+      <UseMemoComponent />
+      <h4>useCallback()</h4>
+      <UseCallbackComponent />
       <h4>Custom Hook()</h4>
+      <UseCounterComponent />
     </>
   );
 }
