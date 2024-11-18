@@ -1,10 +1,7 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-export default function User1Register() {
-  // 라우팅 기능을 제공하는 훅
-  const navigate = useNavigate();
-
+export default function User2Register() {
   const [user, setUser] = useState({
     uid: "",
     name: "",
@@ -20,32 +17,24 @@ export default function User1Register() {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
+  // prettier-ignore
   const submitHandler = (e) => {
     e.preventDefault();
 
-    // Javascript 기본 fetch 함수로 데이터(상태) 전송
-    fetch("http://localhost:8080/ch09/user1", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-
-        // user1/list 라우팅(컴포넌트 전환)
-        navigate("/user1/list");
+    // axios 함수로 데이터(상태) 전송
+    axios
+      .post("http://localhost:8080/ch09/user2", user)
+      .then((response)=>{
+        console.log(response.data);
       })
-      .catch((err) => {
+      .catch((err)=> {
         console.log(err);
       });
   };
 
   return (
-    <div className="User1Register">
-      <span>User1 등록</span>
+    <div className="User2Register">
+      <span>User2 등록</span>
 
       <form onSubmit={submitHandler}>
         <table border={1}>
