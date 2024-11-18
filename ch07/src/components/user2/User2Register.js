@@ -1,7 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function User2Register() {
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     uid: "",
     name: "",
@@ -26,6 +28,7 @@ export default function User2Register() {
       .post("http://localhost:8080/ch09/user2", user)
       .then((response)=>{
         console.log(response.data);
+        navigate('/user2/list');
       })
       .catch((err)=> {
         console.log(err);

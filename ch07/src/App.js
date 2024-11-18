@@ -7,7 +7,6 @@ import User2Component from "./components/user2/User2Component";
   날짜 : 2024/11/18
   이름 : 김철학
   내용 : ch07.리액트 HTTP 통신 실습
-
 */
 function App() {
   return (

@@ -1,11 +1,16 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function User1List() {
+  console.log("User1List start!!!");
+
+  const navigate = useNavigate();
   const [users, setUsers] = useState([]);
 
   // 컴포넌트 생명주기를 제어하는 훅
   useEffect(() => {
+    console.log("useEffect!!!");
     axios
       .get("http://localhost:8080/ch09/user1")
       .then((response) => {
@@ -18,6 +23,25 @@ export default function User1List() {
         console.log(err);
       });
   }, []); // 의존성(반응형) 배열을 빈배열로 선언하면 컴포넌트가 처음 마운트 될때 한번만 실행
+
+  const modifyMove = (user) => {
+    // 쿼리 파라미터 전송
+    navigate(`/user1/modify?uid=${user.uid}`);
+  };
+
+  const deleteProc = (user) => {
+    axios
+      .delete(`http://localhost:8080/ch09/user1/${user.uid}`)
+      .then((response) => {
+        console.log(response.data);
+
+        // 목록 갱신을 위해서 상태 업데이트
+        setUsers(users.filter((u) => u.uid !== user.uid));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div className="User1List">
@@ -41,8 +65,8 @@ export default function User1List() {
             <td>{user.age}</td>
             <td>{user.hp}</td>
             <td>
-              <button onClick={null}>수정</button>
-              <button onClick={null}>삭제</button>
+              <button onClick={() => modifyMove(user)}>수정</button>
+              <button onClick={() => deleteProc(user)}>삭제</button>
             </td>
           </tr>
         ))}
