@@ -20,7 +20,7 @@ export default function Header() {
 
         <ul className="gnb">
           <li>
-            <a href="./introduction/hello.html">팜스토리소개</a>
+            <Link to="/introduction/hello">팜스토리소개</Link>
           </li>
           <li>
             <a href="./market/list.html">
