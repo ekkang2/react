@@ -1,5 +1,5 @@
-import Footer from "../components/main/Footer";
-import Header from "../components/main/Header";
+import Footer from "../components/common/Footer";
+import Header from "../components/common/Header";
 
 // eslint-disable-next-line react/prop-types
 const DefaultLayout = ({ children }) => {
