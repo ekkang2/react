@@ -1,31 +1,34 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
+import Aside from "../components/common/Aside";
+import useCates from "../hooks/useCates";
+import Nav from "../components/common/Nav";
 
 export default function SubLayout({ children }) {
+  const [cate1, cate2] = useCates();
+
   return (
     <div id="sub">
       <div>
-        <img src="../images/sub_top_tit1.png" alt="INTRODUCTION" />
+        {cate1 === "introduction" && (
+          <img src="../images/sub_top_tit1.png" alt="INTRODUCTION" />
+        )}
+        {cate1 === "market" && (
+          <img src="../images/sub_top_tit2.png" alt="MARKET" />
+        )}
+        {cate1 === "croptalk" && (
+          <img src="../images/sub_top_tit3.png" alt="CROPTALK" />
+        )}
+        {cate1 === "event" && (
+          <img src="../images/sub_top_tit4.png" alt="EVENT" />
+        )}
+        {cate1 === "community" && (
+          <img src="../images/sub_top_tit5.png" alt="COMMUNITY" />
+        )}
       </div>
-      <section className="introduction">
-        <aside>
-          <img src="../images/sub_aside_cate1_tit.png" alt="팜스토리 소개" />
-
-          <ul className="lnb">
-            <li className="on">
-              <Link to="/introduction/hello">인사말</Link>
-            </li>
-            <li>
-              <Link to="/introduction/direction">찾아오시는길</Link>
-            </li>
-          </ul>
-        </aside>
+      <section className={cate1}>
+        <Aside />
         <article>
-          <nav>
-            <img src="../images/sub_nav_tit_cate1_tit1.png" alt="인사말" />
-            <p>
-              HOME > 팜스토리소개 > <em>인사말</em>
-            </p>
-          </nav>
+          <Nav />
 
           {children}
         </article>
