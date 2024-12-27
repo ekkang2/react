@@ -4,7 +4,16 @@ import { useEffect, useState } from "react";
 import { getArticle } from "../../api/articleAPI";
 import Pagenation from "./Pagenation";
 
-// list component는 최초 한번만 마운트됨
+// 1. 상태 초기화
+// initState로 상태를 초기화
+// 2. URL 파라미터 읽기
+// useSearchParams를 통해 URL에서 pg값을 가져옴
+// 3. API 호출
+// useEffect가 cate2나 pg값이 변경될 때마다 호출되어 게시글 목록을 서버에서 가져옴
+// 4. 데이터 표시
+// 받아온 데이터를 화면에 표시
+// 5. 페이지네이션
+// Pagenation 컴포넌트를 통해 페이지 이동을 처리
 
 const initState = {
   dtoList: [],
@@ -23,9 +32,9 @@ const initState = {
 
 export default function List() {
   const [cate1, cate2] = useCates();
-  const [data, setData] = useState(initState);
+  const [data, setData] = useState(initState); // 상태 변수 'data'와 상태를 변경하는 'setData'
 
-  const [searchParams] = useSearchParams();
+  const [searchParams] = useSearchParams(); // URL 파라미터에서 'pg' 값을 가져오기 위한 훅
   const pg = searchParams.get("pg") || 1;
 
   useEffect(() => {
@@ -33,7 +42,7 @@ export default function List() {
       const data = await getArticle(cate2, pg);
       console.log(data);
 
-      setData(data);
+      setData(data); // 받아온 데이터를 상태로 설정
     };
 
     fetchData();
